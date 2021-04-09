@@ -1,0 +1,68 @@
+
+
+Softwares Installation steps for Jenkins 
+----------------------------------------
+
+1) Java 
+2) Maven
+3) Git
+4) Jenkins
+
+Java Steps
+----------
+apt search openjdk
+sudo apt install openjdk-8-jdk
+java -version 
+
+Maven
+-----
+sudo apt install maven
+
+Git
+---
+sudo apt install git
+
+Jenkins
+-------
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt update
+sudo apt install jenkins
+sudo sysemctl start jenkins
+sudo systemctl status jenkins
+sudo systemctl restart jenkins
+sudo systemctl enable jenkins ( Bootup start) 
+
+
+
+How to give sudo permissions for jenkins user in Ubuntu machine?
+------------------------------------------------------------------
+Open a file using vi editor or gedit in ubuntu
+1) sudo vi /etc/sudoers or sudo gedit /etc/sudoers
+2) add below line in sudoers file
+jenkins ALL=(ALL) NOPASSWD: ALL
+3)sudo systemctl restart jenkins
+
+
+How to remove jenkins from Ubuntu ?
+------------------------------------
+sudo service jenkins stop
+sudo apt-get remove --purge jenkins
+sudo apt-get remove --auto-remove jenkins
+
+
+How to remove java from Ubuntu ?
+------------------------------------
+sudo rm -rf /usr/lib/jvm/*
+sudo apt install openjdk-8-jre-headless --reinstall
+
+
+How to remove git from Ubuntu ?
+------------------------------------
+sudo apt-get purge --auto-remove gi
+
+
+
+
+
+
